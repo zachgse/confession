@@ -1,54 +1,19 @@
-var first = document.getElementById("first-no"),
-    second = document.getElementById("second-no"),
-    third = document.getElementById("third-no"),
-    fourth = document.getElementById("fourth-no"),
-    fifth = document.getElementById("fifth-no"),
-    yes = document.getElementById("yes"),
-    confess = document.getElementById("confess");
+const noBtn = document.getElementById('no');
+const yesBtn = document.getElementById('yes');
+const ques = document.getElementById('question');
+const reload = document.getElementById('reload');
 
+reload.style.display = "none";
 
-function firstNo() {
-    first.style.display = "none";
-    second.style.display = "block";
-    third.style.display = "none";
-    fourth.style.display = "none";
-    fifth.style.display = "none";
-}
+noBtn.addEventListener("click", ()=> {
+    let rand = Math.floor(Math.random() * (300 - 100) + 1);
+    let rand2 = Math.floor(Math.random() * (-150 - 100) + 1);
+    noBtn.style.transform = "translate("+rand+"px,"+rand2+"px)";
+});
 
-function secondNo() {
-    first.style.display = "none";
-    second.style.display = "none";
-    third.style.display = "block";
-    fourth.style.display = "none";
-    fifth.style.display = "none";
-}
-
-function thirdNo() {
-    first.style.display = "none";
-    second.style.display = "none";
-    third.style.display = "none";
-    fourth.style.display = "block";
-    fifth.style.display = "none";
-}
-
-function fourthNo() {
-    first.style.display = "none";
-    second.style.display = "none";
-    third.style.display = "none";
-    fourth.style.display = "none";
-    fifth.style.display = "block";
-}
-
-function fifthNo() {
-    first.style.display = "block";
-    second.style.display = "none";
-    third.style.display = "none";
-    fourth.style.display = "none";
-    fifth.style.display = "none";
-}
-
-function positive() {
-    confess.style.display = "block";
-    first.style.display = "none";
-    yes.style.display = "none";
-}
+yesBtn.addEventListener("click", ()=>{
+    ques.innerHTML = "Wala eh ako na to eh. HAHAHAHAHA CHZ";
+    yesBtn.style.display = "none";
+    noBtn.style.display = "none";
+    reload.style.display = "block";
+});
